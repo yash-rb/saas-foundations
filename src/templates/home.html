@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page_title }}</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% block head-title %}
+        {{ block.super }} - {{ page_title}} 
+{% endblock head-title %}
+
+{% block content%}
+
+    {% include "./snippets/welcome-user-message.html" %}
+{% endblock content%}

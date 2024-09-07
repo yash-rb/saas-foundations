@@ -3,9 +3,9 @@ from django.shortcuts import render
 
 
 def home_page_view(request, *args, **kwargs):
-    my_title = "My Page"
+    page_title = "Homepage"
     my_context = {
-        "page_title": my_title
+        "page_title": page_title
     }
     
     html_template = "home.html"
