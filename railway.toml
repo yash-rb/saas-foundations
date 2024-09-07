@@ -1,0 +1,10 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "./Dockerfile"
+watchPatterns = [
+    "Pipfile",            # Watch for changes in the Pipfile
+    "Pipfile.lock",       # Watch for changes in the lock file
+    "src/**",             # Your project code
+    "railway.toml",       # Railway configuration
+    "Dockerfile"          # Dockerfile changes
+]
