@@ -9,6 +9,7 @@ gunicorn = "*"
 python-decouple = "*"
 psycopg = {extras = ["binary"], version = "*"}
 dj-database-url = "*"
+requests = "*"
 
 [dev-packages]
 

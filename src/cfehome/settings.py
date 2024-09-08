@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     
     # my - apps
     "visits",
+    "command_line",
 ]
 
 MIDDLEWARE = [
@@ -142,7 +143,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_BASE_DIR = BASE_DIR /"staticfiles"
-STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR /"vendor"
+STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR /"vendors"
+STATICFILES_BASE_DIR.mkdir(exist_ok=True, parents=True)
 
 # sources for for python manage.py collectstatic
 STATICFILES_DIRS=[

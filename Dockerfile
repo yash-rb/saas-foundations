@@ -33,6 +33,9 @@ RUN pipenv install --deploy --system
 # Copy the rest of the application code
 COPY ./src /code
 
+RUN python manage.py pull_vendor_staticfiles
+RUN python manage.py collectstatic --no-input
+
 # Set the Django default project name
 ARG PROJ_NAME="cfehome"
 
