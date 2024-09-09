@@ -33,6 +33,13 @@ RUN pipenv install --deploy --system
 # Copy the rest of the application code
 COPY ./src /code
 
+#Environment variables required to run in production
+ARG DJANGO_SECRET_KEY
+ENV DJANGO_SECRET_KEY = ${Django_Secret_Key}
+
+ARG DJANGO_DEBUG = 0
+ENV DJANGO_DEBUG=${DJANGO_DEBUG}
+
 RUN python manage.py pull_vendor_staticfiles
 RUN python manage.py collectstatic --no-input
 
