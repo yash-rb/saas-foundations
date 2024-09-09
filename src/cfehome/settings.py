@@ -70,6 +70,11 @@ INSTALLED_APPS = [
     # my - apps
     "visits",
     "command_line",
+    
+    #third-party apps
+    #allauth
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +84,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #Others
     "django.middleware.security.SecurityMiddleware",
@@ -102,6 +108,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'cfehome.wsgi.application'
 
@@ -150,6 +158,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Django Allauths config
+ACCOUNT_AUTHENTICATION_METHOD= "username_email"
+ACCOUNT_EMAIL_REQUIRED=True
+LOGIN_REDIRECT_URL="/"
+ACCOUNT_EMAIL_VERIFICATION="mandatory"
+ACCOUNT_EMAIL_SUBJECT__PREFIX="[CFE]"
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
