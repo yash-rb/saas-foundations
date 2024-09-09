@@ -110,6 +110,13 @@ WSGI_APPLICATION = 'cfehome.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+ }
+
 
 CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=30)
 DATABASE_URL = config("DATABASE_URL", cast=str,default=None)
@@ -123,13 +130,7 @@ if DATABASE_URL is not None:
             conn_health_checks=True
             )
     }
-else :
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
