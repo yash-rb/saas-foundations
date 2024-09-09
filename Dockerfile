@@ -40,6 +40,9 @@ ENV DJANGO_SECRET_KEY=${Django_Secret_Key}
 ARG DEBUG=0
 ENV DEBUG=${DEBUG}
 
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
 RUN python manage.py pull_vendor_staticfiles
 RUN python manage.py collectstatic --no-input
 
