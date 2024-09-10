@@ -11,6 +11,10 @@ psycopg = {extras = ["binary"], version = "*"}
 dj-database-url = "*"
 requests = "*"
 whitenoise = "*"
+django-allauth = {extras = ["socialaccount"], version = "*"}
+django-allauth-ui = "*"
+django-widget-tweaks = "*"
+slippers = "*"
 
 [dev-packages]
 
