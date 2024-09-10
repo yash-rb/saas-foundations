@@ -77,7 +77,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     "allauth.socialaccount",
-    # "allauth.socialaccount.providers.github",
+    "allauth.socialaccount.providers.github",
+    'allauth.socialaccount.providers.google',
+
     "widget_tweaks",
     "slippers",
 ]
@@ -181,7 +183,12 @@ AUTHENTICATION_BACKENDS = [
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
-    
+    'github': {
+        "VERIFIED_EMAIL": True
+    },
+    'google':{
+        "VERIFIED_EMAIL": True
+    }
 }
 
 # Internationalization
