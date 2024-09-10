@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from auth import views as auth_views
 
-from .views import home_page_view, About_view
+from .views import home_page_view, About_view, pw_protected_view
 
 urlpatterns = [
     path('', home_page_view,name="home"),
@@ -26,6 +26,7 @@ urlpatterns = [
     path('register/', auth_views.register_view),
     path('hello-world/', home_page_view),
     path('about/', About_view),
+    path('protected/', pw_protected_view),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
 ]
